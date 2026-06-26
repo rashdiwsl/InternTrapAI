@@ -4,12 +4,40 @@ import { useState } from 'react'
 export default function Home() {
   const [message, setMessage] = useState('')
   const [isAnalyzing, setIsAnalyzing] = useState(false)
+  const [displayScore, setDisplayScore] = useState(0)
   const [result, setResult] = useState<null | {
     score: number
     verdict: string
     reasons: string[]
     safeReply: string
   }>(null)
+
+  const exampleMessages = [
+    "Congratulations! You have been selected for a Software Engineer internship at Google. Please respond within 2 hours to confirm your slot. A registration fee of $50 is required for background verification.",
+    "Hi! I am the Head of HR at Amazon. We found your profile and want to offer you a remote internship paying $500/week. Limited slots remaining. Contact us on WhatsApp immediately.",
+    "You have been chosen for an exclusive internship opportunity. Please pay a deposit of LKR 5000 to secure your position. Respond ASAP as only 1 slot remaining.",
+  ]
+
+  const fillExample = () => {
+    const random = exampleMessages[Math.floor(Math.random() * exampleMessages.length)]
+    setMessage(random)
+    setResult(null)
+  }
+
+  const animateScore = (targetScore: number) => {
+    setDisplayScore(0)
+    let current = 0
+    const increment = targetScore / 40
+    const timer = setInterval(() => {
+      current += increment
+      if (current >= targetScore) {
+        setDisplayScore(targetScore)
+        clearInterval(timer)
+      } else {
+        setDisplayScore(Math.floor(current))
+      }
+    }, 30)
+  }
 
   const analyzeMessage = async () => {
     if (!message.trim()) return
@@ -78,6 +106,7 @@ export default function Home() {
         : 'Thank you for reaching out! Could you share more details about the role and the company so I can consider this opportunity?'
 
     setResult({ score, verdict, reasons, safeReply })
+    animateScore(score)
     setIsAnalyzing(false)
   }
 
@@ -154,9 +183,17 @@ export default function Home() {
 
           {/* Input area */}
           <div className="p-6 border-b border-white/5">
-            <label className="block text-xs text-white/40 uppercase tracking-widest mb-3">
-              Paste suspicious message
-            </label>
+            <div className="flex items-center justify-between mb-3">
+              <label className="block text-xs text-white/40 uppercase tracking-widest">
+                Paste suspicious message
+              </label>
+              <button
+                onClick={fillExample}
+                className="text-xs text-white/30 hover:text-white/60 border border-white/10 hover:border-white/20 px-3 py-1 rounded-lg transition-all"
+              >
+                Try an example ↓
+              </button>
+            </div>
             <textarea
               value={message}
               onChange={e => setMessage(e.target.value)}
@@ -202,7 +239,7 @@ export default function Home() {
                       className="text-6xl font-bold tabular-nums"
                       style={{ color: getScoreColor(result.score) }}
                     >
-                      {result.score}
+                      {displayScore}
                     </span>
                     <span className="text-white/30 text-lg">/100</span>
                   </div>
