@@ -312,7 +312,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-white/5 px-6 py-8 text-center text-xs text-white/20">
-        InternTrap AI · General Sir John Kotelawala Defence University · Built to protect students
+        InternTrap AI  · Built to protect students
       </footer>
 
     </main>
