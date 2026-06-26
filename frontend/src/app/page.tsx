@@ -108,9 +108,9 @@ export default function Home() {
           <div className="flex items-center gap-6 text-sm text-white/50">
             <a href="#how" className="hover:text-white transition-colors">How it works</a>
             <a href="#analyze" className="hover:text-white transition-colors">Analyze</a>
-            <button className="px-4 py-2 rounded-lg bg-white text-black text-sm font-medium hover:bg-white/90 transition-colors">
-              Dashboard
-            </button>
+      <a href="/dashboard" className="px-4 py-2 rounded-lg bg-white text-black text-sm font-medium hover:bg-white/90 transition-colors">
+  Dashboard
+</a>
           </div>
         </div>
       </nav>
