@@ -7,7 +7,6 @@ InternTrap AI is a multi-agent AI system that protects university students from 
 
 ## 📸 Screenshots
 
-> UI screenshots coming soon — add yours here once the frontend is running.
 
 | Page | Preview |
 |------|---------|
