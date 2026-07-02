@@ -1,7 +1,7 @@
 # 🛡️ InternTrap AI
-### Scam Detection System for Students — Powered by AI Agents
+### Scam Detection System for Students - Powered by AI Agents
 
-InternTrap AI is a multi-agent AI system that protects university students from fraudulent internship and job offers. Paste a suspicious message, and InternTrap analyzes it for scam patterns, psychological manipulation tactics, and domain legitimacy — delivering a clear 0–100 risk score in seconds.
+InternTrap AI is a multi-agent AI system that protects university students from fraudulent internship and job offers. Paste a suspicious message, and InternTrap analyzes it for scam patterns, psychological manipulation tactics, and domain legitimacy, delivering a clear 0–100 risk score in seconds.
 
 ---
 
