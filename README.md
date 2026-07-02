@@ -121,7 +121,7 @@ interntrap-ai/
 - PostgreSQL schema + Supabase setup
 - Docker containerization
 
-### Member 4 — Response Agent, Learning & Deployment
+### Member 4 — Response Agent, Learning and Deployment
 - Response Agent: context-aware safe reply template generator
 - Learning Agent: feedback loop (thumbs up/down → logs → retraining queue)
 - Scam dataset curation (500–1,000 labeled examples minimum)
